@@ -8,18 +8,20 @@ import java.time.LocalDate;
 public class Patient {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "patient_id")
     private Long patientId;
 
     private String name;
 
+    @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "doctor_id") // Columna en la tabla patients que hace referencia al doctor
+    @ManyToOne
+    @JoinColumn(name = "admitted_by", referencedColumnName = "employee_id")
     private Employee admittedBy;
 
     // Getters y Setters
+
     public Long getPatientId() {
         return patientId;
     }

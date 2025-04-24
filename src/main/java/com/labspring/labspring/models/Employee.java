@@ -9,27 +9,21 @@ import java.util.List;
 public class Employee {
 
     @Id
+    @Column(name = "employee_id")
     private Long employeeId;
+
     private String department;
     private String name;
-    private String status;
 
-    @OneToMany(mappedBy = "admittedBy", cascade = CascadeType.ALL)
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
-    private List<Patient> patients;
-
-    // Constructors
-    public Employee() {
+    public enum Status {
+        ON_CALL, ON, OFF
     }
 
-    public Employee(Long employeeId, String department, String name, String status) {
-        this.employeeId = employeeId;
-        this.department = department;
-        this.name = name;
-        this.status = status;
-    }
+    // Getters y Setters
 
-    // Getters and Setters
     public Long getEmployeeId() {
         return employeeId;
     }
@@ -54,19 +48,11 @@ public class Employee {
         this.name = name;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
-    }
-
-    public List<Patient> getPatients() {
-        return patients;
-    }
-
-    public void setPatients(List<Patient> patients) {
-        this.patients = patients;
     }
 }

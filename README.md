@@ -59,20 +59,23 @@ Patient Table
 ## Instructions
 
 1. **Get all doctors:** Create a route to get all doctors.
-![Captura de pantalla 2025-04-24 153612.png](Captura%20de%20pantalla%202025-04-24%20153612.png)
+[Captura de pantalla 2025-04-24 153612.png](Captura%20de%20pantalla%202025-04-24%20153612.png)
 2. **Get doctor by ID:** Create a route to get a doctor by `employee_id`.
-![Captura de pantalla 2025-04-24 154101.png](Captura%20de%20pantalla%202025-04-24%20154101.png)
+[Captura de pantalla 2025-04-24 154101.png](Captura%20de%20pantalla%202025-04-24%20154101.png)
 3. **Get doctors by status:** Create a route to get doctors by `status`.
-![Captura de pantalla 2025-04-24 154239.png](Captura%20de%20pantalla%202025-04-24%20154239.png)
+[Captura de pantalla 2025-04-24 154239.png](Captura%20de%20pantalla%202025-04-24%20154239.png)
 4. **Get doctors by department:** Create a route to get doctors by `department`.
-![Captura de pantalla 2025-04-24 154422.png](Captura%20de%20pantalla%202025-04-24%20154422.png)
+[Captura de pantalla 2025-04-24 154422.png](Captura%20de%20pantalla%202025-04-24%20154422.png)
 5. **Get all patients:** Create a route to get all patients.
-
+[Captura de pantalla 2025-04-24 173304.png](Captura%20de%20pantalla%202025-04-24%20173304.png)
 6. **Get patient by ID:** Create a route to get a patient by `patient_id`.
+[Captura de pantalla 2025-04-24 173916.png](Captura%20de%20pantalla%202025-04-24%20173916.png)
 7. **Get patients by date of birth range:** Create a route to get patients date of birth within a specified range.
+[Captura de pantalla 2025-04-24 173953.png](Captura%20de%20pantalla%202025-04-24%20173953.png)
 8. **Get patients by admitting doctor's department:** Create a route to get patients by the department that their admitting doctor is in (For example, get all patients admitted by a doctor in cardiology).
+[Captura de pantalla 2025-04-24 174034.png](Captura%20de%20pantalla%202025-04-24%20174034.png)
 9. **Get all patients with a doctor whose status is OFF:** Create a route to get all patients with a doctor whose `status` is OFF.
-
+[Captura de pantalla 2025-04-24 174134.png](Captura%20de%20pantalla%202025-04-24%20174134.png)
 <br>
 
 ## Additional Testing Reminder

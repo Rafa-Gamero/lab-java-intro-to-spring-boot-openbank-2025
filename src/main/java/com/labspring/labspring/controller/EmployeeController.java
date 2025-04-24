@@ -13,41 +13,33 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/doctors")
+@RequestMapping("/api/employees")
 public class EmployeeController {
 
-    @Autowired
-    private EmployeeRepository employeeRepository;
+    private final EmployeeRepository repository;
 
-    // 1. Get all doctors
+    public EmployeeController(EmployeeRepository repository) {
+        this.repository = repository;
+    }
+
     @GetMapping
-    public ResponseEntity<List<Employee>> getAllDoctors() {
-        List<Employee> doctors = employeeRepository.findAll();
-        return new ResponseEntity<>(doctors, HttpStatus.OK);
+    public List<Employee> getAll() {
+        return repository.findAll();
     }
 
-    // 2. Get doctor by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Employee> getDoctorById(@PathVariable("id") Long id) {
-        Optional<Employee> doctor = employeeRepository.findById(id);
-        if (doctor.isPresent()) {
-            return new ResponseEntity<>(doctor.get(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+    public ResponseEntity<Employee> getById(@PathVariable Long id) {
+        return repository.findById(id).map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
-    // 3. Get doctors by status
     @GetMapping("/status/{status}")
-    public ResponseEntity<List<Employee>> getDoctorsByStatus(@PathVariable("status") String status) {
-        List<Employee> doctors = employeeRepository.findByStatus(status);
-        return new ResponseEntity<>(doctors, HttpStatus.OK);
+    public List<Employee> getByStatus(@PathVariable Employee.Status status) {
+        return repository.findByStatus(status);
     }
 
-    // 4. Get doctors by department
-    @GetMapping("/department/{department}")
-    public ResponseEntity<List<Employee>> getDoctorsByDepartment(@PathVariable("department") String department) {
-        List<Employee> doctors = employeeRepository.findByDepartment(department);
-        return new ResponseEntity<>(doctors, HttpStatus.OK);
+    @GetMapping("/department/{dept}")
+    public List<Employee> getByDepartment(@PathVariable String dept) {
+        return repository.findByDepartment(dept);
     }
 }
